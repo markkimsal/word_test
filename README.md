@@ -17,5 +17,5 @@ Caveats
 ===
  * Case sensitivity is undefined, all sequences are compared as lower case strings.
  * UTF-8 is not handled, each word is split on 4 bytes, not 4 characters.
-
+ * In the interest of simplicity, all sequences are stored in memory.  This could lead to OOM sutiations for extremely large input files.
 
