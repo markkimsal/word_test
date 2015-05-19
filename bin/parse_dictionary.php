@@ -27,12 +27,12 @@ $s = new Wordtest\Sequencer();
 $r = new Wordtest\Recorder();
 $p = new Wordtest\Parser(dirname(__DIR__).'/data/dictionary.txt');
 
-$p->on('line',     array($s, 'analyzeWord'));
-$p->on('end',      array($r, 'writeResults'));
 $p->on('start',    array($r, 'reset'));
+$p->on('line',     array($s, 'analyzeWord'));
+$s->on('sequence', array($r, 'recordSequence'));
+$p->on('end',      array($r, 'writeResults'));
 //@TODO: support CLI flags (-v)
 //$p->on('end',      array($r, 'echoResults'));
-$s->on('sequence', array($r, 'recordSequence'));
 
 //bookkeeping
 $countLine = 0;
