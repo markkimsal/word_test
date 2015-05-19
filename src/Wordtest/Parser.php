@@ -21,7 +21,7 @@ class Parser {
 	 * set fh with fopen
 	 */
 	public function openFile() {
-		$this->fh = fopen($this->filename, 'r');
+		$this->fh = @fopen($this->filename, 'r');
 	}
 
 	/**
@@ -33,7 +33,7 @@ class Parser {
 			$this->openFile();
 		}
 		if (!$this->fh) {
-			throw new Exception('Unable to open dictionary file. ('.$this->filename.')');
+			throw new \Exception('Unable to open dictionary file. ('.$this->filename.')');
 		}
 
 		$this->emit('start');
