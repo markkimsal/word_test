@@ -12,7 +12,7 @@ php ./composer.phar install
 
 Running
 ===
-The command line program bin/parse\_dictionary.php will use data/dictionary.txt by default.
+The command line program bin/parse\_dictionary.php will use data/dictionary.txt by default and save the output to output/sequences.txt and output/words.txt.
 ```
 php ./bin/parse_dictionary.php
 ```
