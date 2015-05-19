@@ -35,6 +35,10 @@ class Recorder {
 		$this->listDupes  = array();
 	}
 	
+	public function getUniqueSeqCount() {
+		return count($this->listUnique);
+	}
+
 	/**
 	 * Write listUnique to 2 files in output/ dir.
 	 */

@@ -39,8 +39,8 @@ $countUniq = 0;
 $p->on('line', function($s) use(&$countLine) {
 	$countLine++;
 });
-$p->on('end', function() use($r, &$countUniq) {
-	$countUniq = count($r->listUnique);
+$p->on('end', function() use(&$r, &$countUniq) {
+	$countUniq = $r->getUniqueSeqCount();
 });
 
 
