@@ -20,6 +20,7 @@ if (!include(dirname(__DIR__).'/src/Wordtest/Recorder.php')) {
 	exit();
 }
 
+$startts = microtime(1);
 
 //setup
 $s = new Wordtest\Sequencer();
@@ -47,5 +48,9 @@ $p->on('end', function() use(&$r, &$countUniq) {
 //run
 $p->parse();
 
+
+$endts = microtime(1);
+
 echo 'Done!'.PHP_EOL;
 printf('parsed %d words, found %d unique sequences.'.PHP_EOL, $countLine, $countUniq);
+printf('took %0.2f ms'.PHP_EOL, (($endts - $startts) *1000));
