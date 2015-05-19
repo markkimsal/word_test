@@ -1,3 +1,7 @@
+About
+===
+This project is an attempt to satisfy the requirements laid out @ https://gist.github.com/seanthehead/11180933
+
 Installation
 ===
 Use compser to install dependencies.
