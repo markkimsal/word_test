@@ -42,4 +42,13 @@ class Recorder {
 		fclose($fhs);
 		fclose($fhw);
 	}
+
+	/**
+	 * Echo listUnique
+	 */
+	public function echoResults() {
+		foreach ($this->listUnique as $s => $w) {
+			echo "$s - $w\n";
+		}
+	}
 }
