@@ -4,8 +4,14 @@ namespace Wordtest;
 use Evenement\EventEmitterTrait;
 
 /**
- * Emit a 'sequence' event for every 4 letters
- * in a given word when calling analyzeWord()
+ * Record sequences and the words they come from.
+ * If a sequences has already been recorded, remove it
+ * from the list of uniques.
+ *
+ * This is rather memory intensive, parsing streams would probably be
+ * a better approach, but then this recorder would have to continually
+ * scan and modify the output files to look for duplicates and remove
+ * previously identified uniques when a duplicate sequence is found.
  */
 class Recorder {
 
