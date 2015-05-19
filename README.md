@@ -20,6 +20,8 @@ parsed 25143 words, found 10146 unique sequences.
 took 3459.08 ms
 ```
 
+Note that, depending on your PHP vendor (\*cough\*Macs\*cough\*) this process may take up to 30 seconds.
+
 Caveats
 ===
  * Case sensitivity is undefined, all sequences are compared as lower case strings.
