@@ -36,6 +36,7 @@ class Parser {
 			throw new Exception('Unable to open dictionary file. ('.$this->filename.')');
 		}
 
+		$this->emit('start');
 		while (!feof($this->fh)) {
 			$line = rtrim(fgets($this->fh, 4096));
 			$this->emit('line', array($line));

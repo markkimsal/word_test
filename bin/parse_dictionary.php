@@ -27,6 +27,7 @@ $p = new Wordtest\Parser(dirname(__DIR__).'/data/dictionary.txt');
 
 $p->on('line',     array($s, 'analyzeWord'));
 $p->on('end',      array($r, 'writeResults'));
+$p->on('start',    array($r, 'reset'));
 //@TODO: support CLI flags (-v)
 //$p->on('end',      array($r, 'echoResults'));
 $s->on('sequence', array($r, 'recordSequence'));

@@ -26,6 +26,14 @@ class Recorder {
 		}
 		$this->listUnique[$s] = $w;
 	}
+
+	/**
+	 * Clear internal arrays, reset results
+	 */
+	public function reset() {
+		$this->listUnique = array();
+		$this->listDupes  = array();
+	}
 	
 	/**
 	 * Write listUnique to 2 files in output/ dir.
