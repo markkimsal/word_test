@@ -19,3 +19,11 @@ Caveats
  * UTF-8 is not handled, each word is split on 4 bytes, not 4 characters.
  * In the interest of simplicity, all sequences are stored in memory.  This could lead to OOM sutiations for extremely large input files.
 
+TODO: Things that should be tested or finished to make a proper program.
+===
+ * Can parser be run more than once - test proper opening and closing of file handle
+ * Can recorder be run more than once - test proper resetting of internal arrays.
+ * Test lowercasing of sequences to be certain documented way of comparison does not change.
+ * Test words with strange lengths to ensure Sequencer is not missing any characters.
+ * Ensure words are less than 4096 characters (fgets buffer size).
+ * Test recorder's recordSequence function to make sure it handles duplicate sequences properly.
