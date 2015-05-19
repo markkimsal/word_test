@@ -3,6 +3,9 @@
 namespace Wordtest;
 use Evenement\EventEmitterTrait;
 
+/**
+ * Designed to open a file and emit a 'line' event for every line in the file.
+ */
 class Parser {
 
 	use EventEmitterTrait;
@@ -23,6 +26,7 @@ class Parser {
 
 	/**
 	 * try openFile, then emit 'line' for each line in $this->filename
+	 * emit 'end' after file is closed.
 	 */
 	public function parse() {
 		if (!$this->fh) {
