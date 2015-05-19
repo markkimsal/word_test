@@ -15,6 +15,9 @@ Running
 The command line program bin/parse\_dictionary.php will use data/dictionary.txt by default and save the output to output/sequences.txt and output/words.txt.
 ```
 php ./bin/parse_dictionary.php
+Done!
+parsed 25143 words, found 10146 unique sequences.
+took 3459.08 ms
 ```
 
 Caveats
