@@ -21,6 +21,7 @@ if (!include(dirname(__DIR__).'/src/Wordtest/Recorder.php')) {
 }
 
 
+//setup
 $s = new Wordtest\Sequencer();
 $r = new Wordtest\Recorder();
 $p = new Wordtest\Parser(dirname(__DIR__).'/data/dictionary.txt');
@@ -32,5 +33,19 @@ $p->on('start',    array($r, 'reset'));
 //$p->on('end',      array($r, 'echoResults'));
 $s->on('sequence', array($r, 'recordSequence'));
 
+//bookkeeping
+$countLine = 0;
+$countUniq = 0;
+$p->on('line', function($s) use(&$countLine) {
+	$countLine++;
+});
+$p->on('end', function() use($r, &$countUniq) {
+	$countUniq = count($r->listUnique);
+});
+
+
+//run
 $p->parse();
 
+echo 'Done!'.PHP_EOL;
+printf('parsed %d words, found %d unique sequences.'.PHP_EOL, $countLine, $countUniq);
