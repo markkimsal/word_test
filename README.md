@@ -27,3 +27,4 @@ TODO: Things that should be tested or finished to make a proper program.
  * Test words with strange lengths to ensure Sequencer is not missing any characters.
  * Ensure words are less than 4096 characters (fgets buffer size).
  * Test recorder's recordSequence function to make sure it handles duplicate sequences properly.
+ * Add CLI flags to control location of dictionary file, output location, verbosity, etc.
