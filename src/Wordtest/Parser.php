@@ -39,7 +39,10 @@ class Parser {
 		$this->emit('start');
 		while (!feof($this->fh)) {
 			$line = rtrim(fgets($this->fh, 4096));
-			$this->emit('line', array($line));
+			//skip blank lines
+			if (strlen($line)) {
+				$this->emit('line', array($line));
+			}
 		}
 		fclose($this->fh);
 		$this->emit('end');
